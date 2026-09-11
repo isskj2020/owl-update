@@ -1,3 +1,5 @@
+using Base.Threads
+
 @kwdef mutable struct ShapleyContext <: OWLContext
     axioms::OWLAxioms
     samples::Int = 1000
@@ -34,11 +36,13 @@ end
 function calculate(ctx::ShapleyContext)
     constraints = ctx.axioms.constraints
     n = length(constraints)
-    scores = zeros(Float64, n)
+    sample_scores = [zeros(Float64, n) for _ in 1:ctx.samples]
 
-    for _ in 1:ctx.samples
+    @threads for sample in 1:ctx.samples
+        scores = sample_scores[sample]
+
         perm = randperm(n)
-        subset = Vector{Constraint}()
+        subset = Constraint[]
         prev = shapley_eval(ctx, subset)
 
         for idx in perm
@@ -48,6 +52,7 @@ function calculate(ctx::ShapleyContext)
             prev = value
         end
     end
+    scores = reduce(+, sample_scores)
     real_scores = scores ./ ctx.samples
 
     results = Vector{ShapleyResult}()

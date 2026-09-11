@@ -33,7 +33,7 @@ export default function EditorPane({ editor, graph }: Props) {
           flex: 1,
           display: 'flex',
         }}>
-        <Panel defaultSize='50%'>
+        <Panel defaultSize='55%'>
           <Box
             sx={{
               width: '100%',
@@ -54,7 +54,7 @@ export default function EditorPane({ editor, graph }: Props) {
           }}
         />
   
-        <Panel defaultSize='50%'>
+        <Panel defaultSize='45%'>
           <Box
             sx={{
               width: '100%',

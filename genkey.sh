@@ -43,8 +43,9 @@ JWT_PUBLIC_KEY_PATH=`pwd`/secrets/jwt_public.pem
 CORS_WHITELIST_FILE=`pwd`/secrets/cors_whitelist.txt
 GIT_PATH=`pwd`/storage/
 
-LLAMA_HOST_URL=http://localhost:8001
-EMBEDDING_HOST_URL=http://owl-update-embedding:8002
+LLAMA_HOST_URL=http://owl-update-llama:8000
+EMBEDDING_HOST_URL=http://owl-update-embedding:8000
+
 
 # DB
 DB_HOST=${DB_HOST}
@@ -74,8 +75,8 @@ JWT_PUBLIC_KEY_PATH=/app/secrets/jwt_public.pem
 CORS_WHITELIST_FILE=/app/secrets/cors_whitelist.txt
 GIT_PATH=/app/git/
 
-LLAMA_HOST_URL=http://owl-update-llama:8001
-EMBEDDING_HOST_URL=http://owl-update-embedding:8002
+LLAMA_HOST_URL=http://owl-update-llama:8000
+EMBEDDING_HOST_URL=http://owl-update-embedding:8000
 
 
 # DB

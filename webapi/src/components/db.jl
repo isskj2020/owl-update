@@ -14,7 +14,7 @@ db_connect() = DBInterface.connect(
 )
 db_close(conn) = DBInterface.close!(conn)
 
-const DB_POOL_SIZE = parse(Int, ENV["DB_POOL_SIZE"])
+const DB_POOL_SIZE = 10
 const DB_POOL = Channel{MySQL.Connection}(DB_POOL_SIZE)
 
 function db_init()

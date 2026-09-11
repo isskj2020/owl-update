@@ -44,7 +44,7 @@ services:
       - "--parallel"
       - "1"
     expose:
-      - 8001
+      - 8000
     networks:
       - backend
 
@@ -57,7 +57,7 @@ services:
       - ./.cache/pip:/root/.cache/pip
       - ~/.cache/huggingface:/root/.cache/huggingface
     expose:
-      - 8002
+      - 8000
     networks:
       - backend
         
@@ -65,9 +65,6 @@ services:
     build:
       context: ./web
     container_name: owl-update-webfront
-    volumes:
-      - ./web:/app
-      - /app/node_modules
     ports:
       - 9003:3000
     depends_on:

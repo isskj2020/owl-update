@@ -9,6 +9,8 @@ ENV JULIA_NUM_THREADS "auto"
 
 COPY webapi /app/webapi
 COPY core /app/core
+COPY secrets /app/secrets
+COPY .env.docker /app/.env.docker
 
 WORKDIR /app/core
 RUN julia --project=. -e "using Pkg; Pkg.instantiate(); Pkg.precompile()"
