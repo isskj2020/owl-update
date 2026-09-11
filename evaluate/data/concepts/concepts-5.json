@@ -1,0 +1,24 @@
+{
+  "concepts": [
+    [
+      "Cat",
+      "Animal"
+    ],
+    [
+      "Dictionary",
+      "Book"
+    ],
+    [
+      "NeuroRobot",
+      "Organism"
+    ],
+    [
+      "Comic",
+      "Literature"
+    ],
+    [
+      "Robot",
+      "Human"
+    ]
+  ]
+}

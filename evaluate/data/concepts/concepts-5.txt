@@ -1,0 +1,5 @@
+1.0 = Cat, Animal
+0.8 = Dictionary, Book
+0.5 = NeuroRobot, Organism
+0.3 = Comic, Literature
+0.1 = Robot, Human

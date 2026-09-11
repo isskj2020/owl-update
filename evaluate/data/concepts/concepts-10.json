@@ -1,0 +1,44 @@
+{
+  "concepts": [
+    [
+      "Son",
+      "Parent"
+    ],
+    [
+      "Grass",
+      "Plant"
+    ],
+    [
+      "Novel",
+      "Literature"
+    ],
+    [
+      "Dictionary",
+      "Book"
+    ],
+    [
+      "DigitalMarketing",
+      "IT"
+    ],
+    [
+      "Language",
+      "Organism"
+    ],
+    [
+      "Earth",
+      "Organism"
+    ],
+    [
+      "NuclearPlant",
+      "SustainableEnergy"
+    ],
+    [
+      "Human",
+      "AI"
+    ],
+    [
+      "Whale",
+      "Fish"
+    ]
+  ]
+}
