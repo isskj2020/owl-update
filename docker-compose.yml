@@ -1,0 +1,101 @@
+services:
+  owl-update-db:
+    image: mariadb
+    container_name: owl-update-db
+    environment:
+      MYSQL_DATABASE: owl-update-db
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./mysql/:/docker-entrypoint-initdb.d
+      - ./mysql/conf.d/:/etc/mysql/conf.d/
+    networks:
+      - backend
+    ports:
+      - 9000:3306
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: owl-update-api-phpadmin
+    environment:
+      PMA_HOST: owl-update-db
+    depends_on:
+      - owl-update-db
+    ports:
+      - 9001:80
+    networks:
+      - backend
+
+  llama:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    container_name: owl-update-llama
+    volumes:
+      - ./models:/models
+    command:
+      - "-m"
+      - "/models/qwen2.5-1.5b-instruct-q4_k_m.gguf"
+#      - "/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf"
+#      - "/models/gemma-3-1b-it-Q4_K_M.gguf"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "8000"
+      - "-t"
+      - "4"
+      - "--parallel"
+      - "1"
+    expose:
+      - 8001
+    networks:
+      - backend
+
+  embedding-server:
+    build:
+      context: ./embedding
+    container_name: owl-update-embedding
+    volumes:
+      - ./embedding:/app
+      - ./.cache/pip:/root/.cache/pip
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    expose:
+      - 8002
+    networks:
+      - backend
+        
+  webfront:
+    build:
+      context: ./web
+    container_name: owl-update-webfront
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    ports:
+      - 9003:3000
+    depends_on:
+      - backend-api
+    networks:
+      - backend
+
+  backend-api:
+    build:
+      context: .
+      dockerfile: webapi/Dockerfile
+    container_name: owl-update-backend-api
+    environment:
+      DOCKER: true
+    volumes:
+      - ./webapi:/app/webapi
+      - ./core:/app/core
+      - ./storage:/app/git
+      - ./secrets:/app/secrets
+      - ./.env.docker:/app/.env.docker
+    ports:
+      - 8040:8040
+    depends_on:
+      - owl-update-db
+    networks:
+      - backend
+
+
+networks:
+  backend:
+    driver: bridge

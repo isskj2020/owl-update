@@ -1,0 +1,156 @@
+{
+    "axioms": {
+        "violation_score": 3.48,
+        "constraints": {
+            "1": {
+                "id": "9hz8v5wqEPUPOriUUZQOwdnhYaf5rsKo",
+                "type": 1,
+                "subject": "ex:Animal",
+                "parent": "ex:Organism",
+                "priority": 0.99,
+                "violation": 1,
+                "depth": 2,
+                "repair_cost": 0.2475
+            },
+            "2": {
+                "id": "P7pmGdNlwZsMq4wx0uNVDfG8BrGRTn0W",
+                "type": 1,
+                "subject": "ex:Cat",
+                "parent": "ex:Animal",
+                "priority": 0.99,
+                "violation": 0,
+                "depth": 3,
+                "repair_cost": -1.0
+            },
+            "3": {
+                "id": "wJX1DPBpqS5uA0dHOul2rVoTjUhNpZRS",
+                "type": 1,
+                "subject": "ex:NeuroRobot",
+                "parent": "ex:Animal",
+                "priority": 0.5,
+                "violation": 1,
+                "depth": 3,
+                "repair_cost": 0.0625
+            },
+            "4": {
+                "id": "5eMeq8eJqTrro1FqSwrz3qNYAefnaDid",
+                "type": 1,
+                "subject": "ex:NeuroRobot",
+                "parent": "ex:Robot",
+                "priority": 0.99,
+                "violation": 1,
+                "depth": 3,
+                "repair_cost": 0.12375
+            },
+            "5": {
+                "id": "EOJvhmw6l82PDcuS6vTNU1damGPl7IIy",
+                "type": 1,
+                "subject": "ex:Organism",
+                "parent": "Thing",
+                "priority": 0.99,
+                "violation": 0,
+                "depth": 1,
+                "repair_cost": -1.0
+            },
+            "6": {
+                "id": "ZsLkpz3UvoUsfCl0aW7ISNL2jgERp5uO",
+                "type": 1,
+                "subject": "ex:Robot",
+                "parent": "Thing",
+                "priority": 0.99,
+                "violation": 0,
+                "depth": 1,
+                "repair_cost": -1.0
+            },
+            "7": {
+                "id": "rPoeKq4TeCdyLu10Y9nuYbGHRdNWfPJE",
+                "type": 2,
+                "left": "ex:Organism",
+                "right": "ex:Robot",
+                "priority": 1.0,
+                "violation": 1,
+                "depth": 1,
+                "repair_cost": 0.5
+            }
+        },
+        "namespaces": {
+            "xml:base": "http://prgmon.com/onotology/tutorial",
+            "xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "xmlns:ex": "http://prgmon.com/ontology/tutorial/1#",
+            "xmlns:owl": "http://www.w3.org/2002/07/owl#",
+            "xmlns:xml": "http://www.w3.org/XML/1998/namespace",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema#"
+        }
+    },
+    "nodes": [
+        {
+            "id": 2,
+            "name": "ex:Animal"
+        },
+        {
+            "id": 3,
+            "name": "ex:Organism"
+        },
+        {
+            "id": 1,
+            "name": "Thing"
+        },
+        {
+            "id": 4,
+            "name": "ex:Cat"
+        },
+        {
+            "id": 5,
+            "name": "ex:NeuroRobot"
+        },
+        {
+            "id": 6,
+            "name": "ex:Robot"
+        }
+    ],
+    "edges": [
+        {
+            "source": 3,
+            "target": 1,
+            "type": "subClassOf",
+            "label": "p=0.99"
+        },
+        {
+            "source": 6,
+            "target": 1,
+            "type": "subClassOf",
+            "label": "p=0.99"
+        },
+        {
+            "source": 4,
+            "target": 2,
+            "type": "subClassOf",
+            "label": "p=0.99"
+        },
+        {
+            "source": 5,
+            "target": 2,
+            "type": "subClassOf",
+            "label": "p=0.5"
+        },
+        {
+            "source": 2,
+            "target": 3,
+            "type": "subClassOf",
+            "label": "p=0.99"
+        },
+        {
+            "source": 5,
+            "target": 6,
+            "type": "subClassOf",
+            "label": "p=0.99"
+        },
+        {
+            "source": 3,
+            "target": 6,
+            "type": "disjointWith",
+            "label": "p=1.0"
+        }
+    ]
+}

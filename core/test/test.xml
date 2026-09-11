@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://prgmon.com/onotology/tutorial#"
+     xml:base="http://prgmon.com/onotology/tutorial"
+     xmlns:ex="http://prgmon.com/ontology/tutorial/1#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://prgmon.com/onotology/tutorial"/>
+    
+    <owl:Class rdf:about="http://prgmon.com/ontology/tutorial/1#Animal">
+        <rdfs:subClassOf rdf:resource="http://prgmon.com/ontology/tutorial/1#Organism"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://prgmon.com/ontology/tutorial/1#Cat">
+        <rdfs:subClassOf rdf:resource="http://prgmon.com/ontology/tutorial/1#Animal"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://prgmon.com/ontology/tutorial/1#NeuroRobot">
+        <rdfs:subClassOf rdf:resource="http://prgmon.com/ontology/tutorial/1#Animal"/>
+        <rdfs:subClassOf rdf:resource="http://prgmon.com/ontology/tutorial/1#Robot"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://prgmon.com/ontology/tutorial/1#Organism">
+        <owl:disjointWith rdf:resource="http://prgmon.com/ontology/tutorial/1#Robot"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://prgmon.com/ontology/tutorial/1#Robot"/>
+</rdf:RDF>

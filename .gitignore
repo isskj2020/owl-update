@@ -1,0 +1,10 @@
+venv
+build/
+
+.env*
+**/.env*
+
+storage/
+secrets
+
+**/__pycache__

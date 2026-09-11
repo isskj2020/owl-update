@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+FlagEmbedding
+sentence-transformers

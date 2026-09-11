@@ -1,0 +1,191 @@
+{
+  "violation_score": 4.0,
+  "results": [
+    {
+      "constraint": {
+        "id": "Jrr49VgoUwMFBEqjAa943piWgJ5Tce7e",
+        "type": "disjointWith",
+        "subject": "ex:Organism",
+        "object": "ex:Robot",
+        "priority": 1.0
+      },
+      "depth": 1,
+      "violation": true,
+      "repair_cost": 0.5,
+      "shapley": 0.0
+    },
+    {
+      "constraint": {
+        "id": "MoaKKvEA7W2BSeYa8zRC8Ct7pqOD9KAF",
+        "type": "subClassOf",
+        "subject": "ex:Cat",
+        "parent": "ex:Animal",
+        "priority": 1.0
+      },
+      "depth": 3,
+      "violation": false,
+      "repair_cost": 9.223372036854776e18,
+      "shapley": 0.0
+    },
+    {
+      "constraint": {
+        "id": "5IwNh4PjVr9Z3KEbN52ZEGJjMrMJJImU",
+        "type": "subClassOf",
+        "subject": "ex:NeuroRobot",
+        "parent": "ex:Animal",
+        "priority": 1.0
+      },
+      "depth": 3,
+      "violation": true,
+      "repair_cost": 0.125,
+      "shapley": 0.0
+    },
+    {
+      "constraint": {
+        "id": "41IkoQZYMBQxJikUKdTlbu5GR7WSUnKt",
+        "type": "subClassOf",
+        "subject": "ex:Animal",
+        "parent": "ex:Organism",
+        "priority": 1.0
+      },
+      "depth": 2,
+      "violation": true,
+      "repair_cost": 0.25,
+      "shapley": 0.0
+    },
+    {
+      "constraint": {
+        "id": "jvbiaboWGwNsgASejkRIpw6icwKxMUTe",
+        "type": "subClassOf",
+        "subject": "ex:NeuroRobot",
+        "parent": "ex:Robot",
+        "priority": 1.0
+      },
+      "depth": 3,
+      "violation": true,
+      "repair_cost": 0.125,
+      "shapley": 0.0
+    },
+    {
+      "constraint": {
+        "id": "MPadsTw69mJm2ch86yBZBQ5zlt0pHrwI",
+        "type": "subClassOf",
+        "subject": "ex:Organism",
+        "parent": "owl:Thing",
+        "priority": 1.0
+      },
+      "depth": 1,
+      "violation": false,
+      "repair_cost": 9.223372036854776e18,
+      "shapley": 0.0
+    },
+    {
+      "constraint": {
+        "id": "9uc7kstYEMVnZHavE5a1t013BUm1BJoj",
+        "type": "subClassOf",
+        "subject": "ex:Robot",
+        "parent": "owl:Thing",
+        "priority": 1.0
+      },
+      "depth": 1,
+      "violation": false,
+      "repair_cost": 9.223372036854776e18,
+      "shapley": 0.0
+    }
+  ],
+  "nodes": [
+    {
+      "id": 1,
+      "inconsistent": false
+    },
+    {
+      "id": 2,
+      "inconsistent": false
+    },
+    {
+      "id": 3,
+      "inconsistent": false
+    },
+    {
+      "id": 4,
+      "inconsistent": false
+    },
+    {
+      "id": 5,
+      "inconsistent": false
+    },
+    {
+      "id": 6,
+      "inconsistent": true
+    }
+  ],
+  "edges": [
+    {
+      "source": 2,
+      "target": 3,
+      "violation": true,
+      "type": "disjointWith",
+      "label": "p=1.00"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "violation": false,
+      "type": "subClassOf",
+      "label": "p=1.00"
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "violation": true,
+      "type": "subClassOf",
+      "label": "p=1.00"
+    },
+    {
+      "source": 5,
+      "target": 2,
+      "violation": true,
+      "type": "subClassOf",
+      "label": "p=1.00"
+    },
+    {
+      "source": 6,
+      "target": 3,
+      "violation": true,
+      "type": "subClassOf",
+      "label": "p=1.00"
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "violation": false,
+      "type": "subClassOf",
+      "label": "p=1.00"
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "violation": false,
+      "type": "subClassOf",
+      "label": "p=1.00"
+    }
+  ],
+  "nodemap": [
+    "owl:Thing",
+    "ex:Organism",
+    "ex:Robot",
+    "ex:Cat",
+    "ex:Animal",
+    "ex:NeuroRobot"
+  ],
+  "namespaces": {
+    "xml:base": "http://prgmon.com/onotology/tutorial",
+    "xmlns:ex": "http://prgmon.com/ontology/tutorial/1#",
+    "xmlns:owl": "http://www.w3.org/2002/07/owl#",
+    "xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xmlns:xml": "http://www.w3.org/XML/1998/namespace",
+    "xmlns:xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "decay_factor": 0.5
+}

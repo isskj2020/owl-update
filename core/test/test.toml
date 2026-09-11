@@ -1,0 +1,68 @@
+[namespaces]
+"xml:base" = "http://prgmon.com/onotology/tutorial"
+"xmlns:rdf" = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+"xmlns:xml" = "http://www.w3.org/XML/1998/namespace"
+"xmlns:ex" = "http://prgmon.com/ontology/tutorial/1#"
+"xmlns:owl" = "http://www.w3.org/2002/07/owl#"
+"xmlns:xsd" = "http://www.w3.org/2001/XMLSchema#"
+"xmlns:rdfs" = "http://www.w3.org/2000/01/rdf-schema#"
+
+[status]
+violation_score = 3.0
+
+[[subClassOf]]
+subject = "ex:Organism"
+parent = "owl:Thing"
+priority = 1.0
+violation = 0
+depth = 1
+repair_cost = -1.0
+
+[[subClassOf]]
+subject = "ex:Robot"
+parent = "owl:Thing"
+priority = 1.0
+violation = 0
+depth = 1
+repair_cost = -1.0
+
+[[subClassOf]]
+subject = "ex:Cat"
+parent = "ex:Animal"
+priority = 1.0
+violation = 0
+depth = 3
+repair_cost = -1.0
+
+[[subClassOf]]
+subject = "ex:NeuroRobot"
+parent = "ex:Animal"
+priority = 1.0
+violation = 1
+depth = 3
+repair_cost = 0.125
+
+[[subClassOf]]
+subject = "ex:Animal"
+parent = "ex:Organism"
+priority = 1.0
+violation = 1
+depth = 2
+repair_cost = 0.25
+
+[[subClassOf]]
+subject = "ex:NeuroRobot"
+parent = "ex:Robot"
+priority = 1.0
+violation = 1
+depth = 3
+repair_cost = 0.125
+
+[[disjointWith]]
+subject = "ex:Organism"
+object = "ex:Robot"
+priority = 1.0
+violation = 1
+depth = 1
+repair_cost = 0.5
+
